@@ -8,6 +8,6 @@
 
 Hosted site
 
-[Gmans Site](gman-667.github.io/n-gon-personal/)
+[Gmans Site](gman-667.github.io/Ngonmodded/)
 
 no audio or sfx
