@@ -1,0 +1,66 @@
+******************************************************** Disclaimer **************************************************
+if you are playing this game on the unblocker the person who acutally made the game is (mr landgreen)
+here is the real website, () you can play this , but the acutall unmodded game is on the website
+
+Long live Homework unblocker
+Gman667-
+******************************************************** mods ********************************************************
+none yet 
+
+******************************************************** SOUND ********************************************************
+
+add sounds
+  https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode
+  https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Advanced_techniques
+  style
+    interesting chords, like music, mixolyd 
+    can fade into the background
+    chords gradual rise and fall in volume
+    shouldn't be traditional effects
+  adjust volume with distance
+  mute option to settings
+  end all sounds with each new level
+  write some functions to produce sounds
+  will this effect performance?
+    https://padenot.github.io/web-audio-perf/
+    "Web Audio API implementation use two threads", so it probably isn't much of an issue
+  when to make sounds?
+    if near some strange thing in the level
+    after grabbing a power up, in the selection menu
+    from mobs, damage,inside field
+    when activating fields: time, negative mass, 
+
+    //setup audio context
+    function tone(frequency) {
+        const audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        gainNode.gain.value = 0.25; //controls volume
+        oscillator.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        oscillator.type = "sine"; // 'sine' 'square', 'sawtooth', 'triangle' and 'custom'
+        oscillator.frequency.value = frequency; // value in hertz
+        oscillator.start();
+        return { oscillator: oscillator, audioCtx: audioCtx }
+    }
+    // https://www.fresnostate.edu/folklore/Olson/JUSTINT.HTM
+    // mixolyd. C      D       E      F+    G      A+    B
+    // key=G   264    297     330   356.40 396*   445.50 495 
+    // const t264 = tone(264)
+    // t264.oscillator.stop(t264.audioCtx.currentTime + 2) //in seconds, not milliseconds for some reason
+    // tone(297)
+    // tone(330)
+    // tone(356.40)
+    // tone(396)
+    // tone(445.50)
+    // tone(495)
+
+
+******************************************************** stuff ********************************************************
+
+
+
+******************************************************* DESIGN ******************************************************
+
+this is open , just gmail me ideas and ill try to code them :D
+(Greysenhgerent@gmail.com)
